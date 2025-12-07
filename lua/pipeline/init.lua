@@ -1,11 +1,7 @@
-local pipeline = require("pipeline")
+local p = require("pipeline.pipeline")
 
-vim.api.nvim_create_user_command(
-	"Pipeline",
-	function ()
-		pipeline.start()
-	end,
-	{
-		desc = "Opens pipeline"
-	}
-)
+vim.api.nvim_create_user_command("Pipeline", p.start, {
+  desc = "Opens pipeline",
+})
+
+return p
